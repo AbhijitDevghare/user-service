@@ -269,5 +269,6 @@ module.exports = {
   sendOtp,
   verifyOtp,
   googleOAuthLogin,
-  resetPassword
+  resetPassword,
+  getProfile
 };
