@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../../controllers/authController');
 const upload = require('../../middleware/multer');
+const jwtAuth = require("../../middleware/jwtAuth")
 
 // signup routes
 router.post(

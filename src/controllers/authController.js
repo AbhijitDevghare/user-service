@@ -4,8 +4,6 @@ const UserResponseDTO = require('../dto/UserResponseDto');
 const AppError = require('../utils/error.utils');
 const UserLoginDTO = require('../dto/UserLoginDto');
 
-
-
 async function getProfile(req, res, next) {
   try {
     const user = await authService.getProfile(req.user.id);
