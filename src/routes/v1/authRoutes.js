@@ -13,6 +13,7 @@ router.post('/login', authController.login);
 router.post('/verify-token', authController.verifyToken);
 router.get('/logout',authController.logout)
 
+router.get('/profile', jwtAuth, authController.getProfile);
 
 
 // Password Reset Routes

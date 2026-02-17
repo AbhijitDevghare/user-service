@@ -12,6 +12,17 @@ const sendEmail = require("../utils/sendEmail.js")
 const crypto = require('crypto');
 const { Op } = require('sequelize');
 
+
+async function getProfile(userId) {
+  const user = await User.findByPk(userId);
+
+  if (!user) {
+    throw new AppError("User not found", 404);
+  }
+
+  return user;
+}
+
 async function signup(dto,file) {
 
   const existing = await User.findOne({ where: { email: dto.email } });

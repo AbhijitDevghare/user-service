@@ -5,6 +5,25 @@ const AppError = require('../utils/error.utils');
 const UserLoginDTO = require('../dto/UserLoginDto');
 
 
+
+async function getProfile(req, res, next) {
+  try {
+    const user = await authService.getProfile(req.user.id);
+
+    const userResponse = new UserResponseDTO(user);
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        user: userResponse
+      }
+    });
+
+  } catch (err) {
+    return next(new AppError(err.message, err.status || 500));
+  }
+}
+
 async function signup(req, res, next) {
   try {
     const dto = new UserSignupDTO(req.body);
