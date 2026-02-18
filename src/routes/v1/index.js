@@ -6,6 +6,6 @@ const userRoutes = require('./userRoutes');
 
 // Base paths
 router.use('/auth', authRoutes);
-router.use('/profile', userRoutes);
+router.use('/prof   ile', userRoutes);
 
 module.exports = router;
